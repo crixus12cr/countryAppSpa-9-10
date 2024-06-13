@@ -17,6 +17,11 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
+  /* carga rutas hijas del modulo ej: /countries/by-countries */
+  {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
+  },
   {
     path: '**',
     redirectTo: 'home'
